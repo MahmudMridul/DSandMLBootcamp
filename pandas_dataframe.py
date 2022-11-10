@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 from numpy.random import randn
+import random
 
 pd.set_option('display.max_rows', None)
 #pd.set_option('display.max_colwidth', None)
@@ -110,4 +111,15 @@ salesHourly = pd.concat([salesHourly_2014, salesHourly_2015, salesHourly_2016, s
 # print(data.loc['G1'].loc[1])
 # print(data.loc['G1'].loc[3]['B'])
 
-
+# def add(x):
+#     return x + random.randint(0,10)
+#
+# salesHourly['M01AB2'] = salesHourly['M01AB'].apply(add)
+# salesHourly['N02BA2'] = salesHourly['N02BA'].apply(add)
+# salesHourly['R032'] = salesHourly['R03'].apply(add)
+#
+# salesHourly.drop(['M01AB', 'N02BA', 'R03'], axis=1, inplace=True)
+#
+# cols = ['M01AB2', 'N02BA2', 'R032', 'Weekday Name', 'Month', 'Year']
+# salesHourly = salesHourly[cols]
+# salesHourly.to_excel('sales.xlsx', index=False)
