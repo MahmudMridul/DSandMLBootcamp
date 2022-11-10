@@ -18,7 +18,7 @@ salesHourly_2018 = salesHourly[salesHourly['Year'] == 2018].sample(frac=1).head(
 salesHourly_2019 = salesHourly[salesHourly['Year'] == 2019].sample(frac=1).head(5)
 
 salesHourly = pd.concat([salesHourly_2014, salesHourly_2015, salesHourly_2016, salesHourly_2017, salesHourly_2018, salesHourly_2019])
-print(salesHourly)
+# print(salesHourly)
 
 
 # create a new column
@@ -84,8 +84,18 @@ print(salesHourly)
 
 # print(dataFirst.join(dataSecond, how='inner', lsuffix='Year'))
 
+# operations
+# print(salesHourly['Weekday Name'].unique())
+# print(salesHourly['Weekday Name'].nunique())
+# print(salesHourly['Weekday Name'].value_counts())
+# print(salesHourly['M01AB'].sum())
+# print(salesHourly['M01AB'].mean())
 
+# def times2(x):
+#     return x*2
+# print(salesHourly['M01AB'].apply(times2))
 
+# print(salesHourly.sort_values(by='Month'))
 
 
 # multi level index
@@ -99,4 +109,5 @@ print(salesHourly)
 # print(data.loc['G1'])
 # print(data.loc['G1'].loc[1])
 # print(data.loc['G1'].loc[3]['B'])
+
 
