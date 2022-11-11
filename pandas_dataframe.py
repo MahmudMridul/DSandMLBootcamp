@@ -8,22 +8,13 @@ pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 pd.set_option('display.width', None)
 
-salesHourly = pd.read_excel('saleshourly.xlsx')
-salesHourly = salesHourly[['M01AB', 'Year', 'Month', 'Weekday Name']]
+salesHourly = pd.read_excel('sales.xlsx')
 
-salesHourly_2014 = salesHourly[salesHourly['Year'] == 2014].sample(frac=1).head(5)
-salesHourly_2015 = salesHourly[salesHourly['Year'] == 2015].sample(frac=1).head(5)
-salesHourly_2016 = salesHourly[salesHourly['Year'] == 2016].sample(frac=1).head(5)
-salesHourly_2017 = salesHourly[salesHourly['Year'] == 2017].sample(frac=1).head(5)
-salesHourly_2018 = salesHourly[salesHourly['Year'] == 2018].sample(frac=1).head(5)
-salesHourly_2019 = salesHourly[salesHourly['Year'] == 2019].sample(frac=1).head(5)
-
-salesHourly = pd.concat([salesHourly_2014, salesHourly_2015, salesHourly_2016, salesHourly_2017, salesHourly_2018, salesHourly_2019])
-# print(salesHourly)
+print(salesHourly)
 
 
 # create a new column
-# salesHourly['M01A(B + E)'] = salesHourly['M01AB'] + salesHourly['M01AE']
+# salesHourly['M01A(B + E)'] = salesHourly['M01AB2'] + salesHourly['M01AE']
 # salesHourly['New'] = None
 
 # drop a column
@@ -38,7 +29,7 @@ salesHourly = pd.concat([salesHourly_2014, salesHourly_2015, salesHourly_2016, s
 # print(salesHourly['M01AE'].head(100) > 0)
 # print(salesHourly[salesHourly['M01AE'] > 0].head(50))
 # print(salesHourly[salesHourly['Year'] == 2014])
-# print(salesHourly[salesHourly['Year'] == 2015][['R03', 'R06']])
+# print(salesHourly[salesHourly['Year'] == 2015][['R032', 'R06']])
 # print(salesHourly[(salesHourly['Year'] == 2016) & (salesHourly['Month'] == 1)])
 
 # print(salesHourly.head(10))
@@ -54,11 +45,11 @@ salesHourly = pd.concat([salesHourly_2014, salesHourly_2015, salesHourly_2016, s
 # salesHourly.set_index(a_list_of_index, inplace = True)
 
 # groupByYear = salesHourly.groupby('Year')
-# print(groupByYear.sum()['R03'])
+# print(groupByYear.sum()['R032'])
 # print(groupByYear.sum())
 # print(groupByYear.describe())
 
-# dataOne = salesHourly[(salesHourly['Year'] == 2015) & (salesHourly['M01AB'] > 0)].head(10)
+# dataOne = salesHourly[(salesHourly['Year'] == 2015) & (salesHourly['M01AB2'] > 0)].head(10)
 # dataTwo = salesHourly[(salesHourly['Year'] == 2016) & (salesHourly['M01AE'] > 0)].head(10)
 
 # print(dataOne)
@@ -70,7 +61,7 @@ salesHourly = pd.concat([salesHourly_2014, salesHourly_2015, salesHourly_2016, s
 # print(pd.concat([dataOne, dataTwo], axis=1))
 
 
-# dataFirst = salesHourly[(salesHourly['Year'] == 2015) & (salesHourly['M01AB'] > 0)].head(3)
+# dataFirst = salesHourly[(salesHourly['Year'] == 2015) & (salesHourly['M01AB2'] > 0)].head(3)
 # dataSecond = salesHourly[(salesHourly['Year'] == 2015) & (salesHourly['M01AE'] > 0)].head(3)
 #
 # dataFirst.set_index(['Year'], inplace=True)
@@ -89,12 +80,12 @@ salesHourly = pd.concat([salesHourly_2014, salesHourly_2015, salesHourly_2016, s
 # print(salesHourly['Weekday Name'].unique())
 # print(salesHourly['Weekday Name'].nunique())
 # print(salesHourly['Weekday Name'].value_counts())
-# print(salesHourly['M01AB'].sum())
-# print(salesHourly['M01AB'].mean())
+# print(salesHourly['M01AB2'].sum())
+# print(salesHourly['M01AB2'].mean())
 
 # def times2(x):
 #     return x*2
-# print(salesHourly['M01AB'].apply(times2))
+# print(salesHourly['M01AB2'].apply(times2))
 
 # print(salesHourly.sort_values(by='Month'))
 
@@ -114,12 +105,12 @@ salesHourly = pd.concat([salesHourly_2014, salesHourly_2015, salesHourly_2016, s
 # def add(x):
 #     return x + random.randint(0,10)
 #
-# salesHourly['M01AB2'] = salesHourly['M01AB'].apply(add)
-# salesHourly['N02BA2'] = salesHourly['N02BA'].apply(add)
-# salesHourly['R032'] = salesHourly['R03'].apply(add)
+# salesHourly['M01AB22'] = salesHourly['M01AB2'].apply(add)
+# salesHourly['N02BA22'] = salesHourly['N02BA2'].apply(add)
+# salesHourly['R032'] = salesHourly['R032'].apply(add)
 #
-# salesHourly.drop(['M01AB', 'N02BA', 'R03'], axis=1, inplace=True)
+# salesHourly.drop(['M01AB2', 'N02BA2', 'R032'], axis=1, inplace=True)
 #
-# cols = ['M01AB2', 'N02BA2', 'R032', 'Weekday Name', 'Month', 'Year']
+# cols = ['M01AB22', 'N02BA22', 'R032', 'Weekday Name', 'Month', 'Year']
 # salesHourly = salesHourly[cols]
 # salesHourly.to_excel('sales.xlsx', index=False)
