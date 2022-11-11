@@ -10,11 +10,10 @@ pd.set_option('display.width', None)
 
 salesHourly = pd.read_excel('sales.xlsx')
 
-print(salesHourly)
-
 
 # create a new column
-# salesHourly['M01A(B + E)'] = salesHourly['M01AB2'] + salesHourly['M01AE']
+# salesHourly['M01A(B + E)'] = salesHourly['M01AB2'] + salesHourly['N02BA2']
+# print(salesHourly)
 # salesHourly['New'] = None
 
 # drop a column
@@ -26,10 +25,10 @@ print(salesHourly)
 # print(salesHourly.iloc[4:10])
 
 # applying conditions
-# print(salesHourly['M01AE'].head(100) > 0)
-# print(salesHourly[salesHourly['M01AE'] > 0].head(50))
+# print(salesHourly['M01AB2'].head(100) > 0)
+# print(salesHourly[salesHourly['M01AB2'] > 0].head(50))
 # print(salesHourly[salesHourly['Year'] == 2014])
-# print(salesHourly[salesHourly['Year'] == 2015][['R032', 'R06']])
+# print(salesHourly[salesHourly['Year'] == 2015][['R032', 'N02BA2']])
 # print(salesHourly[(salesHourly['Year'] == 2016) & (salesHourly['Month'] == 1)])
 
 # print(salesHourly.head(10))
